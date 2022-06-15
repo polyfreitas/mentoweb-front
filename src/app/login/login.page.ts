@@ -12,7 +12,11 @@ export class LoginPage {
 
   }
 
-login(){
-  this.navCtrl.navigateRoot('Tab1Page');
+  showTab1() {
+  this.navCtrl.navigateForward('tab1');
+ }
+
+ showRegister() {
+  this.navCtrl.navigateForward('register');
  }
 }

@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
+
+  
   <ion-toolbar>
     <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+        Pesquisar
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <ion-content>
+   <p>Faça sua busca por filtros</p>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+   <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="showTab1()" tab="monitorias">
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>Monitorias</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="showTab2()" tab="pesquisar">
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-label>Pesquisar</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="showTab3()" tab="configuracoes">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label>Configurações</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
+  </ion-content>

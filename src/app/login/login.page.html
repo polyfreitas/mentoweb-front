@@ -1,6 +1,8 @@
 <ion-content padding>
+    <div class="heading">
         <h1>Entrar agora</h1>
         <p>Por favor faça seu login para continuar</p> 
+    </div>
 
         <form>
             <ion-item>
@@ -11,8 +13,7 @@
                 <ion-label stacked>Senha</ion-label>
                 <ion-input type="password"></ion-input>
             </ion-item>
-            <button ion-button (click)="login()">Entrar</button>
-    </form>
-        <button ion-button outline>Registrar</button>
-
+            <ion-button (click)="showTab1()">Login</ion-button>
+        </form>
+        <button ion-button outline (click)="showRegister()">Registrar</button>
 </ion-content> 
