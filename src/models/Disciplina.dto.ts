@@ -1,6 +1,5 @@
-export interface CategoriaDTO {
+export interface DisciplinaDTO {
     id: string;
     nome: string;
     curso: string;
-    periodo: string
 }

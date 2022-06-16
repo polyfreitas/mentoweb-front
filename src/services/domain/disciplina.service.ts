@@ -1,13 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { CategoriaDTO } from "src/models/categoria.dto";
+import { DisciplinaDTO } from "src/models/Disciplina.dto";
 
 @Injectable()
-export class CategoriaService {
+export class DisciplinaService {
     constructor(public http: HttpClient){
     }
-    findAll() : Observable<CategoriaDTO[]> {
-        return this.http.get<CategoriaDTO[]>("http://localhost:8100/categorias");
+    findAll() : Observable<DisciplinaDTO[]> {
+        return this.http.get<DisciplinaDTO[]>("http://localhost:8100/disciplina");
     }
 }
