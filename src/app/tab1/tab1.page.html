@@ -1,43 +1,52 @@
 <ion-header [translucent]="true">
 
   
-<ion-toolbar>
-  <ion-title>
-      Página inicial
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+  <ion-toolbar>
+    <ion-title>
+        Página inicial
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
 
-<ion-content>
+    <span class="monitoria-nao-encontrada">
+      Crie sua primeira monitoria! 
+    </span>
+  
 
- <p>Monitorias da semana</p>
+    <div class="card" *NgFor="Let task of monitoria">
+      <span class="card-title" [innerText]="monitoria.name"></span>
+      <div class="action-buttons">
+        <ion-icon name="trash-outline"></ion-icon>
+        <ion-icon name="create-outline"></ion-icon>
+      </div>
+    </div>
 
- <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="monitorias">
-      <ion-icon name="book-outline"></ion-icon>
-      <ion-label>Monitorias</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button (click)="showTab2()" tab="pesquisar">
-      <ion-icon name="search-outline"></ion-icon>
-      <ion-label>Pesquisar</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button (click)="showTab3()" tab="configuracoes">
-      <ion-icon name="settings-outline"></ion-icon>
-      <ion-label>Configurações</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
-
-<ion-list>
-  <button ion-item>
-    <ion-thumbnail item-start>
-    </ion-thumbnail>
-    <h3>Monitoria de matemática</h3>
-    <p>Monitor Lucas Mundins Kavetzki</p>
-  </button>
-</ion-list>
-
-</ion-content>
+    <div class="insert-monitoria">
+      <input type="text" name="monitoria" id="monitoria" placeholder="Poste sua monitoria aqui" [(ngModel)]="monitoria.name" (keyup.enter)="insertMonitoria(monitoria)">
+      <button (click)="insertMonitoria">Postar</button>
+    </div>
+  
+   <p>Monitorias da semana</p>
+  
+   <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="monitorias">
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>Monitorias</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="showTab2()" tab="pesquisar">
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-label>Pesquisar</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="showTab3()" tab="configuracoes">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label>Configurações</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
+  </ion-content>
