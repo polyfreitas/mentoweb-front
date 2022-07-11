@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { DisciplinaDTO } from "src/models/Disciplina.dto";
+import { DisciplinaDTO } from "src/models/disciplina.dto";
 
 @Injectable()
 export class DisciplinaService {

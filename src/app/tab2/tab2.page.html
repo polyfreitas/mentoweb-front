@@ -12,6 +12,10 @@
   
   <ion-content>
 
+    <div class="barra-pesquisa">
+    <ion-searchbar color="primary" type=text placeholder="Busque por filtros"></ion-searchbar>
+    </div>
+
    <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button (click)="showTab1()" tab="monitorias">
@@ -25,8 +29,8 @@
       </ion-tab-button>
   
       <ion-tab-button (click)="showTab3()" tab="configuracoes">
-        <ion-icon name="settings-outline"></ion-icon>
-        <ion-label>Configurações</ion-label>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

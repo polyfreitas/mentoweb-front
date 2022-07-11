@@ -1,19 +1,16 @@
-import { Component, NgModule } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
+import { IonModal, NavController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
-import { EditModalComponent } from './edit-modal/edit-modal.component';
-
+import { ModalComponent } from './modal/modal.component';
 
 export class monitoriaInterface {
   id: string;
-  name: string;
+  monitor: string;
+  data: string;
+  local: string;
+  horario: string;
+  disciplina: string;
 }
-
-@NgModule({
-  declarations: [EditModalComponent],
-  entryComponents: [EditModalComponent],
-  exports: [EditModalComponent]
-})
 
 export class EditModule { }
 
@@ -22,40 +19,67 @@ export class EditModule { }
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
-    public monitoria: monitoriaInterface[] = [];
+    public monitorias: monitoriaInterface[] = [
+      {
+        data: '07/07',
+        disciplina: 'Matemática 6',
+        horario: '14h',
+        id: '1',
+        local: 'Sala 10',
+        monitor: 'Polyana Alves de Freitas',
+      },
+      {
+        data: '29/04',
+        disciplina: 'Segurança da Informação',
+        horario: '09h',
+        id: '2',
+        local: 'Biblioteca',
+        monitor: 'Maria Elis Oliveira Garcia',
+      }
+    ];
     public monitoriaName: string = '';
   
   constructor(public navCtrl: NavController,
               private modalController: ModalController
     ) { }
 
-  insertMonitoria(name: string) {
-    const id = String(new Date().getTime());
+    ngOnInit(): void {
+      
+    }
 
-    this.monitoria.push({ name, id });
+    async openEditMonitoria(monitoria?: monitoriaInterface) {
 
-    this.monitoriaName = '';
-  }
+      const hasMonitoria = !!monitoria;
 
-  deleteTask(id: string) {
-    const newMonitoriaArray: monitoriaInterface[] = this.monitoria.filter((el: monitoriaInterface) => el.id != id);
-
-    this.monitoria = newMonitoriaArray;
-  }
-
-  async openEditMonitoria(monitoria: monitoriaInterface) {
-    const modal = await this.modalController.create({
-      component: EditModalComponent,
-      cssClass: 'edit-monitoria-modal',
-      componentProps: {
-        monitoria
+      if(!monitoria){
+        monitoria={
+          data: '',
+          disciplina: '',
+          horario:'',
+          id: '',
+          local: '',
+          monitor: '',
+        }
       }
-    });
+      const modal = await this.modalController.create({
+        component: ModalComponent,
+        cssClass: 'edit-monitoria-modal',
+        componentProps: {monitoria}
+      });
+  
+      await modal.present();
+      modal.onWillDismiss().then(res => {
+        if (!hasMonitoria) {
+          this.monitorias.push(res.data)
+        }
+      })
+    }
 
-    await modal.present();
-  }
+    deleteMonitoria(id){
+      this.monitorias = this.monitorias.filter(monitoria => monitoria.id !=id);
+    }
 
   showTab2() {
     this.navCtrl.navigateForward('tab2');

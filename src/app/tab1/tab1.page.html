@@ -10,27 +10,35 @@
   
   <ion-content>
 
-    <span class="monitoria-nao-encontrada">
-      Crie sua primeira monitoria! 
-    </span>
+    <p>Monitorias</p>
+
+    <ion-card *ngFor="let monitoria of monitorias">
+      <ion-card-header>
+        <ion-card-subtitle>{{monitoria.monitor}}</ion-card-subtitle>
+        <ion-card-title>{{monitoria.disciplina}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        DATA: {{monitoria.data}}<br>
+        HORÁRIO: {{monitoria.horario}}<br>
+        LOCAL: {{monitoria.local}}<br>
+
+        <div class="action-buttons">
+          <ion-icon name="trash-outline" color="danger" style="margin-bottom: 10px;" (click)="deleteMonitoria(monitoria.id)"></ion-icon>
+          <ion-icon name="create-outline" color="success" (click)="openEditMonitoria(monitoria)"></ion-icon>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab horizontal="end" vertical="down" slot="fixed">
+      <ion-fab-button id="open-modal" (click)="openEditMonitoria()" color="primary">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   
 
-    <div class="card" *NgFor="Let task of monitoria">
-      <span class="card-title" [innerText]="monitoria.name"></span>
-      <div class="action-buttons">
-        <ion-icon name="trash-outline"></ion-icon>
-        <ion-icon name="create-outline"></ion-icon>
-      </div>
-    </div>
-
-    <div class="insert-monitoria">
-      <input type="text" name="monitoria" id="monitoria" placeholder="Poste sua monitoria aqui" [(ngModel)]="monitoria.name" (keyup.enter)="insertMonitoria(monitoria)">
-      <button (click)="insertMonitoria">Postar</button>
-    </div>
-  
-   <p>Monitorias da semana</p>
-  
-   <ion-tabs>
+   <!-- <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="monitorias">
         <ion-icon name="book-outline"></ion-icon>
@@ -43,10 +51,10 @@
       </ion-tab-button>
   
       <ion-tab-button (click)="showTab3()" tab="configuracoes">
-        <ion-icon name="settings-outline"></ion-icon>
-        <ion-label>Configurações</ion-label>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
-  </ion-tabs>
-  
+  </ion-tabs> -->
+
   </ion-content>
