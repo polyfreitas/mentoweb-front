@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from 'src/services/auth.service';
 import { DisciplinaService } from 'src/services/domain/disciplina.service';
+import { StorageService } from 'src/services/storage.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { DisciplinaService } from 'src/services/domain/disciplina.service';
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     DisciplinaService,
     AuthService,
+    StorageService
   ]
 })
 export class AppModule {}

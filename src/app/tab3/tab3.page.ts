@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { StorageService } from 'src/services/storage.service';
 
 @Component({
   selector: 'app-tab3',
@@ -8,7 +9,19 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab3Page {
 
-  constructor(public navCtrl: NavController) {}
+  email: string;
+
+  constructor(
+    public navCtrl: NavController,
+    public storage: StorageService) {
+    }
+
+  ionViewDidLoad() {
+    let localUser = this.storage.getLocalUser()
+    if (localUser && localUser.email) {
+      this.email = localUser.email;
+    }
+  }
 
   showTab1() {
     this.navCtrl.navigateForward('tab1');

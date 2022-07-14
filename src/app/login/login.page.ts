@@ -24,7 +24,7 @@ export class LoginPage {
   showTab1() {
     this.auth.authenticate(this.creds)
     .subscribe(response =>{
-      console.log(response.headers.get('Authorization'));
+      this.auth.successfulLogin(response.headers.get('Authorization'));
       this.navCtrl.navigateForward('tab1');
     },
     error => {});

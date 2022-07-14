@@ -7,8 +7,8 @@ export class monitoriaInterface {
   id: string;
   monitor: string;
   data: string;
-  local: string;
   horario: string;
+  local: string;
   disciplina: string;
 }
 
