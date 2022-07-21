@@ -1,3 +1,3 @@
 export const API_CONFIG = {
-    baseUrl: "http://localhost:8100"
+    baseUrl: "http://localhost:8081/h2-console"
 }

@@ -8,8 +8,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from 'src/services/auth.service';
-import { DisciplinaService } from 'src/services/domain/disciplina.service';
+import { DisciplinaService } from 'src/services/domain/Disciplina.service';
 import { StorageService } from 'src/services/storage.service';
+import { AlunoService } from 'src/services/domain/Aluno.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { StorageService } from 'src/services/storage.service';
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     DisciplinaService,
     AuthService,
-    StorageService
+    StorageService,
+    AlunoService
   ]
 })
 export class AppModule {}

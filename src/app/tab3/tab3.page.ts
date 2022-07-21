@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AlunoDTO } from 'src/models/Aluno.dto';
+import { AlunoService } from 'src/services/domain/Aluno.service';
 import { StorageService } from 'src/services/storage.service';
 
 @Component({
@@ -9,19 +11,24 @@ import { StorageService } from 'src/services/storage.service';
 })
 export class Tab3Page {
 
-  email: string;
+  Aluno: AlunoDTO;
 
   constructor(
     public navCtrl: NavController,
-    public storage: StorageService) {
+    public storage: StorageService,
+    public alunoService: AlunoService) {
     }
 
   ionViewDidLoad() {
-    let localUser = this.storage.getLocalUser()
-    if (localUser && localUser.email) {
-      this.email = localUser.email;
-    }
+    let localUser = this.storage.getLocalUser();
+    if (localUser && localUser.id) {
+      this.alunoService.findById(localUser.id)
+      .subscribe(response => {
+      this.Aluno = response;
+    },
+    error => {});
   }
+}
 
   showTab1() {
     this.navCtrl.navigateForward('tab1');

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { CredenciaisDTO } from 'src/models/credenciais.dto';
+import { CredenciaisDTO } from 'src/models/Credenciais.dto';
 import { AuthService } from 'src/services/auth.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class LoginPage {
 
   }
 
-  showTab1() {
+  login() {
     this.auth.authenticate(this.creds)
     .subscribe(response =>{
       this.auth.successfulLogin(response.headers.get('Authorization'));
