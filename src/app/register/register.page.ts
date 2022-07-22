@@ -9,6 +9,10 @@ export class RegisterPage implements OnInit {
 
   constructor() { }
 
+  singupUser() {
+    console.log("enviou o formulário")
+  }
+
   ngOnInit() {
   }
 

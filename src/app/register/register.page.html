@@ -4,6 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <form (ngSubmit)="singupUser(); $event.preventDefault()">
+    <ion-item>
+      <ion-label stacked>Nome*</ion-label>
+      <ion-input name="nome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email*</ion-label>
+      <ion-input name="email" type="text"></ion-input>
+    </ion-item>
+    <ion-list radio-group name="curso">
+      <ion-list-header>
+      Curso
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Informática</ion-label>
+        <ion-radio checked="true" value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Eletrotécnica</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+    </ion-list>
 
+    <ion-item>
+      <ion-label stacked>Senha*</ion-label>
+      <ion-input name="senha" type="password"></ion-input>
+    </ion-item>
+
+    <button ion-button block type="submit">Criar conta</button>
+  </form>
 </ion-content>
