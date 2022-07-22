@@ -30,12 +30,7 @@ export class LoginPage {
     error => {});
  }
 
- signup() {
-  this.navCtrl.navigateForward('RegisterPage');
- }
-
-
- showRegister(): void {
+ showRegister() {
   this.navCtrl.navigateForward('register');
- }
+   }
 }

@@ -19,17 +19,6 @@ export class Tab3Page {
     public alunoService: AlunoService) {
     }
 
-  ionViewDidLoad() {
-    let localUser = this.storage.getLocalUser();
-    if (localUser && localUser.id) {
-      this.alunoService.findById(localUser.id)
-      .subscribe(response => {
-      this.Aluno = response;
-    },
-    error => {});
-  }
-}
-
   showTab1() {
     this.navCtrl.navigateForward('tab1');
     }
