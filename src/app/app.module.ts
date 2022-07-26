@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouteReuseStrategy } from '@angular/router';
@@ -11,6 +11,10 @@ import { AuthService } from 'src/services/auth.service';
 import { DisciplinaService } from 'src/services/domain/Disciplina.service';
 import { StorageService } from 'src/services/storage.service';
 import { AlunoService } from 'src/services/domain/Aluno.service';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +33,8 @@ import { AlunoService } from 'src/services/domain/Aluno.service';
     DisciplinaService,
     AuthService,
     StorageService,
-    AlunoService
+    AlunoService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
   ]
 })
 export class AppModule {}

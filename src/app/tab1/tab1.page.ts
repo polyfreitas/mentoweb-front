@@ -6,8 +6,7 @@ import { ModalComponent } from './modal/modal.component';
 export class monitoriaInterface {
   id: string;
   monitor: string;
-  data: string;
-  horario: string;
+  dataehora: string;
   local: string;
   disciplina: string;
 }
@@ -22,22 +21,7 @@ export class EditModule { }
 export class Tab1Page implements OnInit {
 
     public monitorias: monitoriaInterface[] = [
-      {
-        data: '07/07',
-        disciplina: 'Matemática 6',
-        horario: '14h',
-        id: '1',
-        local: 'Sala 10',
-        monitor: 'Polyana Alves de Freitas',
-      },
-      {
-        data: '29/04',
-        disciplina: 'Segurança da Informação',
-        horario: '09h',
-        id: '2',
-        local: 'Biblioteca',
-        monitor: 'Maria Elis Oliveira Garcia',
-      }
+    
     ];
     public monitoriaName: string = '';
   
@@ -55,9 +39,8 @@ export class Tab1Page implements OnInit {
 
       if(!monitoria){
         monitoria={
-          data: '',
+          dataehora: '',
           disciplina: '',
-          horario:'',
           id: '',
           local: '',
           monitor: '',
@@ -80,6 +63,7 @@ export class Tab1Page implements OnInit {
     deleteMonitoria(id){
       this.monitorias = this.monitorias.filter(monitoria => monitoria.id !=id);
     }
+
 
   showTab2() {
     this.navCtrl.navigateForward('tab2');
