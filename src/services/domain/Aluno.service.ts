@@ -10,5 +10,8 @@ export class AlunoService {
 
     constructor(public http: HttpClient, public storage: StorageService) {
     }
-        
+       
+    findAll() : Observable<AlunoDTO[]> {
+        return this.http.get<AlunoDTO[]>("http://localhost:8081/aluno");
+    }
 }

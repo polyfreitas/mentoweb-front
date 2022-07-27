@@ -2,6 +2,7 @@ import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
 import { IonModal, NavController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { ModalComponent } from './modal/modal.component';
+import { AlertController } from '@ionic/angular';
 
 export class monitoriaInterface {
   id: string;
@@ -26,7 +27,8 @@ export class Tab1Page implements OnInit {
     public monitoriaName: string = '';
   
   constructor(public navCtrl: NavController,
-              private modalController: ModalController
+              private modalController: ModalController,
+              public alertController: AlertController,
     ) { }
 
     ngOnInit(): void {

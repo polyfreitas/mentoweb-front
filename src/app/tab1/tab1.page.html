@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-item lines="none">
-      <ion-label style="font-weight: 800;font-size: 45px;">
+      <ion-label style="text-align: center; font-weight: 800;font-size: 45px; margin:15px">
         Monitorias
       </ion-label>
     </ion-item>
@@ -17,7 +17,7 @@
       </ion-card-header>
     
       <ion-card-content>
-        DATA E HORA: {{monitoria.dataehora | date: 'shortDate'}}<br>
+        DATA E HORA: {{ monitoria.dataehora | date:'dd/MM/yyyy HH:mm' }}<br>
         LOCAL: {{monitoria.local}}<br>
 
         <div class="action-buttons">
@@ -35,7 +35,7 @@
     </ion-fab>
   
 
-   <!-- <ion-tabs>
+   <ion-tabs fixed>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="monitorias">
         <ion-icon name="book-outline"></ion-icon>
@@ -52,6 +52,6 @@
         <ion-label>Perfil</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
-  </ion-tabs> -->
+  </ion-tabs>
 
   </ion-content>

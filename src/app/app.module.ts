@@ -34,6 +34,7 @@ registerLocaleData(localePt);
     AuthService,
     StorageService,
     AlunoService,
+    DisciplinaService,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
   ]
 })

@@ -27,7 +27,7 @@ export class LoginPage {
       this.auth.successfulLogin(response.headers.get('Authorization'));
       this.navCtrl.navigateForward('tab1');
     },
-    error => {});
+    _error => {});
  }
 
  showRegister() {

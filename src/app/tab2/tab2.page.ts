@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AlunoService } from 'src/services/domain/Aluno.service';
 
 @Component({
   selector: 'app-tab2',
@@ -8,7 +9,19 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab2Page {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController,
+    public alunoService: AlunoService,
+    ) {}
+
+    ionViewDidLoad() {
+      this.alunoService.findAll()
+      .subscribe(response => {
+        console.log(response);
+      });
+      error => {
+        console.log(error);
+      }
+    }
 
 showTab1() {
 this.navCtrl.navigateForward('tab1');

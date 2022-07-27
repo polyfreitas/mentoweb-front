@@ -1,20 +1,18 @@
 <ion-header [translucent]="true">
-
-  
   <ion-toolbar>
-    <ion-title>
+    <ion-item lines="none">
+      <ion-label style="text-align: center; font-weight: 800;font-size: 45px; margin:15px">
         Pesquisar
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
 
+<div class="barra-pesquisa">
+  <ion-searchbar color="primary" placeholder="Faça sua busca"  showCancelButton="focus"></ion-searchbar>
+</div>
   
   <ion-content>
-
-    <div class="barra-pesquisa">
-    <ion-searchbar color="primary" type=text placeholder="Busque por filtros"></ion-searchbar>
-    </div>
 
    <ion-tabs>
     <ion-tab-bar slot="bottom">

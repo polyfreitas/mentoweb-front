@@ -1,8 +1,12 @@
-<div>
-  <span>
-    Adicione uma nova monitoria
-  </span>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>Adicione uma nova monitoria</ion-title>
+      <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="cancel()"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
 
+
+  <ion-content>
     <ion-item>
       <ion-label position="floating">Digite o seu nome</ion-label>
       <ion-input [(ngModel)]="monitoria.monitor"></ion-input>
@@ -13,19 +17,20 @@
       <ion-input [(ngModel)]="monitoria.disciplina"></ion-input>
     </ion-item>
 
-  <ion-item>
-    <ion-icon name="calendar-outline" slot="start"></ion-icon>
-    <ion-label>Data e hora</ion-label>
-    <ion-datetime [(ngModel)]="monitoria.dataehora" displayFormat="D-MM-YYYYTHH:mm"></ion-datetime>
-  </ion-item>
+    <ion-item>
+      <ion-label position="floating">Digite o local</ion-label>
+      <ion-input [(ngModel)]="monitoria.local"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Digite o local</ion-label>
-    <ion-input [(ngModel)]="monitoria.local"></ion-input>
-  </ion-item>
-  
+    <ion-item>
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+      <ion-label>Data e hora</ion-label>
+      <ion-datetime [(ngModel)]="monitoria.dataehora" displayFormat="D-MM-YYYYTHH:mm"></ion-datetime>
+    </ion-item>
+
   <ion-button (click)="confirmMonitoria()">
     Enviar
   </ion-button>
 
-</div>
+</ion-content>
+
