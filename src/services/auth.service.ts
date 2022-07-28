@@ -14,7 +14,7 @@ export class AuthService {
     
  authenticate(creds: CredenciaisDTO){
     return this.http.post(
-        `${API_CONFIG.baseUrl}/login`,
+        "http://localhost:8081",
     creds,
     {
         observe:'response',

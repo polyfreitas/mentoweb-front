@@ -1,19 +1,20 @@
 <ion-header [translucent]="true">
-
-  
   <ion-toolbar>
-    <ion-title>
+    <ion-item lines="none">
+      <ion-label style="text-align: center; font-weight: 800;font-size: 45px; margin:15px">
         Perfil do usuário
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+  
 
   <h2 text-center>{{aluno?.Nome}}</h2>
   <p text-center>{{aluno?.id}}</p>
 
-  <button size="small" tabsClose ion-item (click)="logout()"> 
+  <ion-button size="small" (click)="logout()"> 
     Sair
-  </button>
+  </ion-button>
   
   <ion-content padding>
   

@@ -13,5 +13,7 @@ export class AlunoService {
        
     findAll() : Observable<AlunoDTO[]> {
         return this.http.get<AlunoDTO[]>("http://localhost:8081/aluno");
+        }
     }
-}
+
+
