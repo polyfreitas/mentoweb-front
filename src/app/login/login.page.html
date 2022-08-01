@@ -1,20 +1,34 @@
-<ion-content padding>
-    <div class="heading">
-        <h1>Entrar agora</h1>
-        <p>Por favor faça seu login para continuar</p> 
+<ion-content>
+
+    <div id="header">
+        <div id="logo">
+            <img src="assets/astronauta.svg" alt="logo">
+        </div>
+
+        <p>Seja bem-vindo!</p>
+        <h1>Faça seu Login</h1>
     </div>
 
-        <form>
-            <ion-item div class="item-content">
-                <ion-label stacked>Email</ion-label>
-                    <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label stacked>Senha</ion-label>
-                <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
-            </ion-item>
-            <ion-button (click)="login()">Login</ion-button>
-            <ion-button (click)="showRegister()">Registrar</ion-button>
-        </form>
+    <div class="campos">
+        <ion-card class="form-campos">
+            <ion-card-content>
+             <form>
+                <ion-item>
+                    <ion-icon name="mail"></ion-icon>
+                    <ion-input [(ngModel)]="creds.email" name="email" type="text" placeholder="Email Institucional" clearInput="true"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <ion-input [(ngModel)]="creds.senha" name="senha" type="password" placeholder="Senha" clearInput="true"></ion-input>
+                </ion-item>
+                <ion-button expand="block" (click)="login()">Login</ion-button>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </div>
 
 </ion-content> 
+    <div class="line-text">
+        <span class="lines"></span>
+            <span class="text" (click)="showRegister()">Registrar</span>
+    </div>
