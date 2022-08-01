@@ -11,13 +11,7 @@ import { monitoriaInterface } from '../tab1.page';
 
 export class ModalComponent implements OnInit {
 
-  @Input() monitoria: monitoriaInterface ={
-    dataehora: '',
-    disciplina: '',
-    id: '',
-    local: '',
-    monitor: '',
-  }
+  @Input() monitoria: monitoriaInterface;
 
   constructor(private modalController: ModalController,
     public navCtrl: NavController) {

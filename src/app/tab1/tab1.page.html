@@ -12,12 +12,12 @@
 
     <ion-card *ngFor="let monitoria of monitorias">
       <ion-card-header>
-        <ion-card-title>DISCIPLINA: {{monitoria.disciplina}}</ion-card-title>
-        <ion-card-subtitle>MONITOR: {{monitoria.monitor}}</ion-card-subtitle>
+        <ion-card-title>DISCIPLINA: {{monitoria.disciplina.nome}}</ion-card-title>
+        <ion-card-subtitle>MONITOR: {{monitoria.monitor.nomeCompleto}}</ion-card-subtitle>
       </ion-card-header>
     
       <ion-card-content>
-        DATA E HORA: {{ monitoria.dataehora | date:'dd/MM/yyyy HH:mm' }}<br>
+        DATA E HORA: {{ monitoria.data + ' ' + monitoria.horario}}<br>
         LOCAL: {{monitoria.local}}<br>
 
         <div class="action-buttons">
@@ -33,25 +33,5 @@
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-  
-
-   <ion-tabs fixed>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="monitorias">
-        <ion-icon name="book-outline"></ion-icon>
-        <ion-label>Monitorias</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button (click)="showTab2()" tab="pesquisar">
-        <ion-icon name="search-outline"></ion-icon>
-        <ion-label>Pesquisar</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button (click)="showTab3()" tab="configuracoes">
-        <ion-icon name="person-outline"></ion-icon>
-        <ion-label>Perfil</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
 
   </ion-content>

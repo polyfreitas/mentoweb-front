@@ -19,16 +19,7 @@ export class Tab3Page {
     public storage: StorageService,
     public alunoService: AlunoService,
     public auth: AuthService,
-    ) {
-    }
-
-  showTab1() {
-    this.navCtrl.navigateForward('tab1');
-    }
-    
-    showTab2() {
-    this.navCtrl.navigateForward('tab2');
-      }
-
+  ) {
+  }
 
 }

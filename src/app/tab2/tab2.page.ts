@@ -22,13 +22,4 @@ export class Tab2Page {
         console.log(error);
       }
     }
-
-showTab1() {
-this.navCtrl.navigateForward('tab1');
-}
-
-showTab3() {
-this.navCtrl.navigateForward('tab3');
-  }
-
 }

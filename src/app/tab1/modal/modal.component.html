@@ -6,7 +6,7 @@
   </ion-header>
 
 
-  <ion-content>
+  <ion-content *ngIf="monitoria">
     <ion-item>
       <ion-textarea [(ngModel)]="monitoria.monitor"  placeholder="Digite seu nome"></ion-textarea>
     </ion-item>
