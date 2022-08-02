@@ -1,6 +1,6 @@
 #header {
  height: 33%;
- background: #06060F;
+ background: #020014;
  border-radius: 0 0 20px 20px;
  display: flex;
  flex-direction: column;
@@ -9,9 +9,8 @@
 }
 
 #logo {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +24,7 @@ img {
 
 h1 {
     font-size: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 25px;
     margin-top: 0px;
     text-align: center;
 }
@@ -37,9 +36,9 @@ p {
 
 .campos{
     position: absolute;
-    top: 26%;
-    left: 4%;
-    right: 4%;
+    top: 15%;
+    left: 10%;
+    right: 10%;
 }
 
 .form-campos {
@@ -48,9 +47,17 @@ p {
     padding: 15px 10px;
 }
 
+.botao-registro {
+    --background: #1e1e1e;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #4433FF;
+}
 
 ion-item {
-    --background: #4343B1;
+    --background: #4433FF;
     -webkit-padding-start: 10px;
     --highlight-heigth: 0;
     --border-width: 0;
@@ -64,7 +71,7 @@ ion-button {
     border-radius: 4px;
     margin-left: 10px;
     margin-top: 20px;
-    --background: #4040A0;
+    --background: #4433FF;
 }
 
 ion-icon {
