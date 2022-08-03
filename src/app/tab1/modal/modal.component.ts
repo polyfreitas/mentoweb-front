@@ -25,6 +25,7 @@ export class ModalComponent implements OnInit {
     this.modalController.dismiss(this.monitoria);
   }
 
+  // arrumar a função cancel pois está postando a monitoria
     async cancel(){
       await this.modalController.dismiss(this.monitoria)
     }

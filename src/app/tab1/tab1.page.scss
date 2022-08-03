@@ -1,6 +1,23 @@
-.action-buttons
-ion-icon{
+.action-buttons ion-icon {
     font-size: 32px;
 }
 
+ion-fab-button {
+    --background: #4433FF;
+    margin-top: 280px;
+}
 
+ion-header {
+    ion-list {
+        background: #4433FF;
+        border-radius: 0 0 20px 20px;
+        padding-bottom: 7vh;
+        ion-item {
+            ion-label {
+                font-weight: bold;
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+}

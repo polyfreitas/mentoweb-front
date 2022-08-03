@@ -1,11 +1,11 @@
 #header {
- height: 33%;
- background: #020014;
- border-radius: 0 0 20px 20px;
- display: flex;
- flex-direction: column;
- color: #fff;
- padding: 20px;
+    height: 33%;
+    background: #020014;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 20px;
 }
 
 #logo {
@@ -25,16 +25,16 @@ img {
 h1 {
     font-size: 40px;
     margin-bottom: 25px;
-    margin-top: 0px;
     text-align: center;
 }
 
 p {
+    margin-top: 5px;
     font-size: 18px;
     text-align: center;
 }
 
-.campos{
+.campos {
     position: absolute;
     top: 15%;
     left: 10%;
@@ -81,5 +81,5 @@ ion-icon {
 
 line-text {
     padding: 0 30px;
-    
+
 }

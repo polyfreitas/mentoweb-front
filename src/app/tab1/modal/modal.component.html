@@ -1,33 +1,40 @@
-  <ion-header class="ion-no-border">
-    <ion-toolbar>
-      <ion-title>Adicione uma nova monitoria</ion-title>
-      <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="cancel()"></ion-icon>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Adicione uma nova monitoria</ion-title>
+    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="cancel()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
 
   <ion-content *ngIf="monitoria">
     <ion-item>
-      <ion-textarea [(ngModel)]="monitoria.monitor"  placeholder="Digite seu nome"></ion-textarea>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-textarea [(ngModel)]="monitoria.monitor.nomeCompleto" placeholder="Digite seu nome completo"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-textarea [(ngModel)]="monitoria.disciplina"  placeholder="Digite a disciplina"></ion-textarea>
+      <ion-icon name="journal-outline" slot="start"></ion-icon>
+      <ion-textarea [(ngModel)]="monitoria.disciplina.nome" placeholder="Digite a disciplina"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-textarea [(ngModel)]="monitoria.local"  placeholder="Digite o local"></ion-textarea>
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-textarea [(ngModel)]="monitoria.local" placeholder="Digite o local"></ion-textarea>
     </ion-item>
 
     <ion-item>
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
-      <ion-label>Data e hora</ion-label>
-      <ion-datetime [(ngModel)]="monitoria.dataehora" displayFormat="D-MM-YYYYTHH:mm"></ion-datetime>
+      <ion-label>Data</ion-label>
+      <ion-datetime [(ngModel)]="monitoria.data" displayFormat="D / MM / YYYY" presentation="date"></ion-datetime>
     </ion-item>
 
-  <ion-button (click)="confirmMonitoria()">
-    Enviar
-  </ion-button>
+    <ion-item>
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      <ion-label>Horário</ion-label>
+      <ion-datetime [(ngModel)]="monitoria.horario" displayFormat="HH:mm" presentation="time"></ion-datetime>
+    </ion-item>
 
-</ion-content>
+    <ion-button (click)="confirmMonitoria()">
+      Enviar
+    </ion-button>
 
+  </ion-content>

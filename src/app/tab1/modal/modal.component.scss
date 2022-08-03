@@ -1,7 +1,14 @@
 ion-datetime {
-    --background: #003e57;
-    --background-rgb: 255,241,242;
-    
-    border-radius: 16px;
-    box-shadow: rgba(var(--ion-color-primary), 0.3) 0px 10px 15px -3px;
-  }
+  --background: #020014;
+  --background-rgb: 255, 241, 242;
+
+  border-radius: 10px;
+  box-shadow: rgba(var(#4433FF), 0.3) 0px 10px 15px -3px;
+}
+
+ion-button {
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-top: 20px;
+  --background: #4433FF;
+}

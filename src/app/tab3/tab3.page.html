@@ -1,18 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-item lines="none">
-      <ion-label style="text-align: center; font-weight: 800;font-size: 45px; margin:15px">
-        Perfil do usuário
-      </ion-label>
+<ion-header class="ion-no-border">
+  <ion-list lines="none">
+    <ion-item color="#4433FF">
     </ion-item>
-  </ion-toolbar>
-</ion-header>
-  
-
-  <h2 text-center>{{aluno?.Nome}}</h2>
-  <p text-center>{{aluno?.id}}</p>
-
-  <ion-button size="small" (click)="logout()"> 
+    <ion-item color="#4433FF">
+      <ion-label>Perfil</ion-label>
+    </ion-item>
+    <h6>{{aluno?.Nome}}</h6>
+    <p>{{aluno?.id}}</p>
+  </ion-list>
+  <ion-button expand="block" (click)="logout()">
     Sair
   </ion-button>
-  
+</ion-header>

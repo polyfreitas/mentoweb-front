@@ -1,12 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-item lines="none">
-      <ion-label style="text-align: center; font-weight: 800;font-size: 45px; margin:15px">
-        Monitorias
-      </ion-label>
+<ion-header class="ion-no-border">
+  <ion-list lines="none">
+    <ion-item color="#4433FF">
     </ion-item>
-  </ion-toolbar>
+    <ion-item color="#4433FF">
+      <ion-label>Monitorias</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-header>
+
   
   <ion-content>
 
@@ -17,7 +18,7 @@
       </ion-card-header>
     
       <ion-card-content>
-        DATA E HORA: {{ monitoria.data + ' ' + monitoria.horario}}<br>
+        DATA E HORA: {{ monitoria.data + ' ' + monitoria.horario | date:'dd/MM/yyyy HH:mm' }}<br>
         LOCAL: {{monitoria.local}}<br>
 
         <div class="action-buttons">
@@ -29,7 +30,7 @@
     </ion-card>
 
     <ion-fab horizontal="end" vertical="down" slot="fixed">
-      <ion-fab-button id="open-modal" (click)="openEditMonitoria()" color="primary">
+      <ion-fab-button id="open-modal" (click)="openEditMonitoria()">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
