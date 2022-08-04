@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Credenciais } from 'src/models/credenciais';
 import { NavController } from '@ionic/angular';
-import { CredenciaisDTO } from 'src/models/Credenciais.dto';
 import { AuthService } from 'src/services/auth.service';
 
 @Component({
@@ -8,29 +9,28 @@ import { AuthService } from 'src/services/auth.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
 
-  creds: CredenciaisDTO = {
-    email: "",
-    senha: ""
-  };
-
-  constructor(
-    public navCtrl: NavController,
-    public auth: AuthService) {
-
+  creds: Credenciais = {
+    email: '',
+    senha: ''
   }
 
-  login() {
-    this.auth.authenticate(this.creds)
-    .subscribe(response =>{
-      this.auth.successfulLogin(response.headers.get('Authorization'));
-      this.navCtrl.navigateForward('tab1');
-    },
-    _error => {});
- }
+  email = new FormControl(null, Validators.email)
+  senha = new FormControl(null, Validators.minLength(3))
 
- showRegister() {
-  this.navCtrl.navigateForward('register');
-   }
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  validaCampos(): boolean {
+    if (this.email.valid && this.senha.valid) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
 }

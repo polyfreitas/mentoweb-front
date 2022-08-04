@@ -5,6 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from 'src/services/auth.service';
@@ -24,7 +25,10 @@ registerLocaleData(localePt);
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
-    AppRoutingModule],
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 
     bootstrap: [AppComponent],
     

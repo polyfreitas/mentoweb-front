@@ -1,7 +1,11 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Adicione uma nova monitoria</ion-title>
-    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="cancel()"></ion-icon>
+      <ion-buttons slot="start">
+          <ion-button color="dark" (click)="fecharModal()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title>Criar monitoria</ion-title> 
   </ion-toolbar>
 </ion-header>
 

@@ -9,25 +9,27 @@ import { monitoriaInterface } from '../tab1.page';
   styleUrls: ['./modal.component.scss'],
 })
 
+
 export class ModalComponent implements OnInit {
 
   @Input() monitoria: monitoriaInterface;
 
-  constructor(private modalController: ModalController,
+  constructor(
+    private modalCtrl: ModalController,
     public navCtrl: NavController) {
-    
+
   }
 
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   confirmMonitoria() {
-    this.modalController.dismiss(this.monitoria);
+    this.modalCtrl.dismiss(this.monitoria);
   }
 
   // arrumar a função cancel pois está postando a monitoria
-    async cancel(){
-      await this.modalController.dismiss(this.monitoria)
-    }
+  fecharModal() {
+    this.modalCtrl.dismiss(null, 'cancel');
+  }
 }
 

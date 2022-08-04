@@ -14,14 +14,14 @@
              <form>
                 <ion-item>
                     <ion-icon name="mail"></ion-icon>
-                    <ion-input [(ngModel)]="creds.email" name="email" type="text" placeholder="Email Institucional" clearInput="true"></ion-input>
+                    <input [FormControl]="email" required [(ngModel)]="creds.email" name="email" type="text" placeholder="Email Institucional" clearInput="true">
                 </ion-item>
                 <ion-item>
                     <ion-icon name="lock-closed"></ion-icon>
-                    <ion-input [(ngModel)]="creds.senha" name="senha" type="password" placeholder="Senha" clearInput="true"></ion-input>
+                    <input required [(ngModel)]="creds.senha" name="senha" type="password" placeholder="Senha" clearInput="true">
                 </ion-item>
-                <ion-button expand="block" (click)="login()">Login</ion-button>
-                <ion-button class="botao-registro" expand="block" (click)="showRegister()">Criar sua conta</ion-button>
+                <ion-button [disabled]="!validaCampos()" expand="block">Login</ion-button>
+                <ion-button class="botao-registro" expand="block">Criar sua conta</ion-button>
               </form>
             </ion-card-content>
           </ion-card>
