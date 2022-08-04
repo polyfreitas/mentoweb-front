@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
+
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
