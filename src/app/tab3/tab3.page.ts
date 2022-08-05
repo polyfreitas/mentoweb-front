@@ -28,7 +28,7 @@ export class Tab3Page {
 
     this.toastOptions = {
       message: 'Logout realizado com sucesso',
-      duration: 7000
+      duration: 5000
     }
 
   }
