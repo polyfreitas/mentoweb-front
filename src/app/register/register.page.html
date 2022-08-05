@@ -9,7 +9,7 @@
   </ion-header>
 
 <ion-content>
-  <form [formGroup]="FormGroup" (ngSubmit)="singupUser(); $event.preventDefault()">
+  <form [fGroup]="formGroup">
 
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
@@ -23,7 +23,7 @@
 
     <ion-list radio-group formControlName="curso">
       <ion-list-header>
-        Curso
+        Curso*
       </ion-list-header>
       <ion-item>
         <ion-label>Informática</ion-label>
@@ -41,6 +41,6 @@
       <ion-input formControlName="senha" type="password"></ion-input>
     </ion-item>
 
-    <button ion-button block type="submit">Criar conta</button>
+    <button (ngSubmit)="singupUser(); $event.preventDefault()" ion-button block type="submit">Criar conta</button>
     </form>
 </ion-content>

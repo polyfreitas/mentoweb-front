@@ -32,23 +32,20 @@ export class LoginPage implements OnInit {
         Validators.minLength(5),
         Validators.maxLength(30)
       ])]
-      });
-    }
-
-  ngOnInit(): void {}
-
-  logar() {
-    this.fGroup.valid
-    console.log(this.fGroup.value);
+    });
   }
 
+  ngOnInit(): void { }
+
+  // COLOCAR AQUI AQUELA MENSAGEM DE ERRO AO LOGAR, MAS PRECISA DE TOAST
+  // O THIS.CREDS.SENHA É PARA ESVAZIAR O CAMPO DE SENHA CASO O USUÁRIO ERRAR
+  // logar() {
+  //   this.toast.error('Usuário e/ou senha inválidos', 'Login')
+  //   this.creds.senha = ''
+  // }
+
   validaCampos(): boolean {
-    if (this.email.valid && this.senha.valid) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return (this.email.valid && this.senha.valid)
   }
 
 }

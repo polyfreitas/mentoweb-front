@@ -18,8 +18,10 @@
                         </ion-input>
                         <div *ngIf="fGroup.controls.inbox.errors">
                             <p *ngIf="fGroup.controls.inbox.errors.required">Esse campo é obrigatório!</p>
-                            <p *ngIf="fGroup.controls.inbox.errors.minlength">Esse campo deve ter no mínimo 5 caracteres</p>
-                            <p *ngIf="fGroup.controls.inbox.errors.maxlength">Esse campo deve ter no máximo 80 caracteres</p>
+                            <p *ngIf="fGroup.controls.inbox.errors.minlength">Esse campo deve ter no mínimo 5 caracteres
+                            </p>
+                            <p *ngIf="fGroup.controls.inbox.errors.maxlength">Esse campo deve ter no máximo 80
+                                caracteres</p>
                         </div>
                     </ion-item>
 
@@ -29,13 +31,15 @@
                             clearInput="true">
                         </ion-input>
                         <div *ngIf="fGroup.controls.password.errors">
-                        <p *ngIf="fGroup.controls.password.errors.required">Esse campo é obrigatório!</p>
-                        <p *ngIf="fGroup.controls.password.errors.minlength">Esse campo deve ter no mínimo 5 caracteres</p>
-                        <p *ngIf="fGroup.controls.password.errors.maxlength">Esse campo deve ter no máximo 30 caracteres</p>
+                            <p *ngIf="fGroup.controls.password.errors.required">Esse campo é obrigatório!</p>
+                            <p *ngIf="fGroup.controls.password.errors.minlength">Esse campo deve ter no mínimo 5
+                                caracteres</p>
+                            <p *ngIf="fGroup.controls.password.errors.maxlength">Esse campo deve ter no máximo 30
+                                caracteres</p>
                         </div>
                     </ion-item>
 
-                    <ion-button (click)="validaCampos" [disabled]="!fGroup.valid" expand="block">Login</ion-button>
+                    <ion-button [disabled]="!validaCampos()" expand="block">Login</ion-button>
                     <ion-button class="botao-registro" expand="block">Criar sua conta</ion-button>
                 </form>
 

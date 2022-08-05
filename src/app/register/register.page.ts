@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Credenciais } from 'src/models/credenciais';
 
 @Component({
 
@@ -13,18 +14,26 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 export class RegisterPage implements OnInit {
 
-  formGroup: FormGroup;
+  // creds: Credenciais = {
+  //   nome:'',
+  //   email:'',
+  //   curso:'',
+  //   senha:'',
+  // }
+
+  public fGroup: FormGroup;
 
   constructor(
-    public formBuilder: FormBuilder) {
+    public fBuilder: FormBuilder) {
 
-      this.formGroup = this.formBuilder.group({
-        Nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(90)]],
-        email: ['', [Validators.required, Validators.email]],
-        Senha: ['',[Validators.required]],
-        curso: [null, [Validators.required]]
-      });
+    this.fGroup = this.fBuilder.group({
+      nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(90)]],
+      email: ['', [Validators.required, Validators.email]],
+      Senha: ['', [Validators.required]],
+      curso: [null, [Validators.required]]
+    });
   }
+
 
   singupUser() {
     console.log("enviou o formulário")
