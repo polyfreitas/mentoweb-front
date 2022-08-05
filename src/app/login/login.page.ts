@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Credenciais } from 'src/models/credenciais';
-import { NavController } from '@ionic/angular';
-import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +17,19 @@ export class LoginPage implements OnInit {
   email = new FormControl(null, Validators.email)
   senha = new FormControl(null, Validators.minLength(3))
 
-  constructor() { }
+  public fGroup: FormGroup;
 
-  ngOnInit(): void {
+  constructor(public fBuilder: FormBuilder) {
+    this.fGroup = this.fBuilder.group({
+      'inbox': [''],
+      'password': ['']
+    })
+  }
+
+  ngOnInit(): void {}
+
+  logar() {
+    
   }
 
   validaCampos(): boolean {

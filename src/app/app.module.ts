@@ -14,7 +14,6 @@ import { StorageService } from 'src/services/storage.service';
 import { AlunoService } from 'src/services/domain/Aluno.service';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { ToastrModule } from 'ngx-toastr';
 
 registerLocaleData(localePt);
 
@@ -29,7 +28,6 @@ registerLocaleData(localePt);
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule,
   ],
 
     bootstrap: [AppComponent],

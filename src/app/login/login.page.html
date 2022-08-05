@@ -1,9 +1,7 @@
 <ion-content>
-
     <div id="header">
         <div id="logo">
         </div>
-
     </div>
 
     <div class="campos">
@@ -11,20 +9,28 @@
             <ion-card-content>
                 <p>Seja bem-vindo!</p>
                 <h1>Faça seu Login</h1>
-             <form>
-                <ion-item>
-                    <ion-icon name="mail"></ion-icon>
-                    <input [FormControl]="email" required [(ngModel)]="creds.email" name="email" type="text" placeholder="Email Institucional" clearInput="true">
-                </ion-item>
-                <ion-item>
-                    <ion-icon name="lock-closed"></ion-icon>
-                    <input required [(ngModel)]="creds.senha" name="senha" type="password" placeholder="Senha" clearInput="true">
-                </ion-item>
-                <ion-button [disabled]="!validaCampos()" expand="block">Login</ion-button>
-                <ion-button class="botao-registro" expand="block">Criar sua conta</ion-button>
-              </form>
-            </ion-card-content>
-          </ion-card>
-        </div>
 
-</ion-content> 
+                <form [formGroup]="fGroup">
+                    <ion-item>
+                        <ion-icon name="mail"></ion-icon>
+                        <ion-input required [(ngModel)]="creds.email" formControlName="inbox" name="email" type="email"
+                            placeholder="Email Institucional" clearInput="true">
+                        </ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-icon name="lock-closed"></ion-icon>
+                        <ion-input required [(ngModel)]="creds.senha" formControlName="password" name="senha" type="password" placeholder="Senha"
+                            clearInput="true">
+                        </ion-input>
+                    </ion-item>
+
+                    <ion-button [disabled]="!validaCampos()" expand="block">Login</ion-button>
+                    <ion-button class="botao-registro" expand="block">Criar sua conta</ion-button>
+                </form>
+
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>
