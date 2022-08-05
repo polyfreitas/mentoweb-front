@@ -19,7 +19,8 @@ export class LoginPage implements OnInit {
 
   public fGroup: FormGroup;
 
-  constructor(public fBuilder: FormBuilder) {
+  constructor(
+    public fBuilder: FormBuilder) {
     this.fGroup = this.fBuilder.group({
       'inbox': [this.email, Validators.compose([
         Validators.required,
@@ -37,12 +38,14 @@ export class LoginPage implements OnInit {
 
   ngOnInit(): void { }
 
-  // COLOCAR AQUI AQUELA MENSAGEM DE ERRO AO LOGAR, MAS PRECISA DE TOAST
-  // O THIS.CREDS.SENHA É PARA ESVAZIAR O CAMPO DE SENHA CASO O USUÁRIO ERRAR
-  // logar() {
-  //   this.toast.error('Usuário e/ou senha inválidos', 'Login')
-  //   this.creds.senha = ''
-  // }
+      // COLOCAR AQUI AQUELA MENSAGEM DE ERRO AO LOGAR, MAS PRECISA DE TOAST
+      // O THIS.CREDS.SENHA É PARA ESVAZIAR O CAMPO DE SENHA CASO O USUÁRIO ERRAR
+      // this.toast.error('Usuário e/ou senha inválidos', 'Login')
+      
+      logar() {
+      
+        this.creds.senha = ''
+      }
 
   validaCampos(): boolean {
     return (this.email.valid && this.senha.valid)
