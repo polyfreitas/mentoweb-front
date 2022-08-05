@@ -21,15 +21,25 @@ export class LoginPage implements OnInit {
 
   constructor(public fBuilder: FormBuilder) {
     this.fGroup = this.fBuilder.group({
-      'inbox': [''],
-      'password': ['']
-    })
-  }
+      'inbox': [this.email, Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(80),
+        Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+      ])],
+      'password': [this.senha, Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(30)
+      ])]
+      });
+    }
 
   ngOnInit(): void {}
 
   logar() {
-    
+    this.fGroup.valid
+    console.log(this.fGroup.value);
   }
 
   validaCampos(): boolean {
