@@ -8,6 +8,8 @@
   </ion-list>
 </ion-header>
 
+<ion-searchbar #search debounce="500" (ionChange)="($event)" placeholder="Faça sua busca"></ion-searchbar>
+
 <ion-content>
   <ion-card>
     <ion-item>
