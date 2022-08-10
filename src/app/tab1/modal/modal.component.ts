@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
 import { monitoriaInterface } from '../tab1.page';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-modal',
@@ -9,27 +9,28 @@ import { monitoriaInterface } from '../tab1.page';
   styleUrls: ['./modal.component.scss'],
 })
 
-
 export class ModalComponent implements OnInit {
+  isModalOpen = false;
 
   @Input() monitoria: monitoriaInterface;
 
   constructor(
-    private modalCtrl: ModalController,
+    private location: Location,
+    public modalCtrl: ModalController,
     public navCtrl: NavController) {
 
   }
 
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   confirmMonitoria() {
     this.modalCtrl.dismiss(this.monitoria);
   }
 
-  // arrumar a função cancel pois está postando a monitoria
-  fecharModal() {
-    this.modalCtrl.dismiss(null, 'cancel');
+  cancel () {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
   }
 }
-
