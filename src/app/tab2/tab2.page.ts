@@ -22,4 +22,12 @@ export class Tab2Page {
         console.log(error);
       }
     }
+
+    showInfo() {
+      this.navCtrl.navigateForward('monitorias-list');
+    }
+
+    showEletro() {
+      this.navCtrl.navigateForward('monitorias-list-eletro');
+    }
 }

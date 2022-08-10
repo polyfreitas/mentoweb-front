@@ -20,6 +20,15 @@ loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
 path: 'register',
 loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
 },
+  {
+    path: 'monitorias-list',
+    loadChildren: () => import('./monitorias-list/monitorias-list.module').then( m => m.MonitoriasListPageModule)
+  },
+  {
+    path: 'monitorias-list-eletro',
+    loadChildren: () => import('./monitorias-list-eletro/monitorias-list-eletro.module').then( m => m.MonitoriasListEletroPageModule)
+  },
+
 
 ]
 

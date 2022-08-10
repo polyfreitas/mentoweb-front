@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  <ion-title>Disciplinas de Eletrotécnica</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list></ion-list>
+  <ion-item *ngFor="let disciplinas of monitoriasEletro">
+    <ion-label>{{disciplinas.nome}}</ion-label>
+    <p> ID: {{disciplinas.id}}</p>
+  </ion-item>
+</ion-content>
