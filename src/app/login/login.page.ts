@@ -40,7 +40,10 @@ export class LoginPage implements OnInit {
 
   logar() {
     if(this.fGroup.valid) {
-      this.auth.authenticate(this.fGroup.value).subscribe(res => console.log(res))
+      this.auth.authenticate(this.fGroup.value).subscribe(res => {
+        this.auth.successfulLogin(res.headers.get('Authorization'));
+        this.navCtrl.navigateForward('tabs')
+      })
     }
   }
 

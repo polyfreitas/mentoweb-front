@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
+import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { monitoriaInterface } from '../tab1.page';
-import { Location } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 
 @Component({
   selector: 'app-modal',
@@ -15,6 +15,8 @@ export class ModalComponent implements OnInit {
   @Input() monitoria: monitoriaInterface;
 
   constructor(
+    private alertController: AlertController,
+    public datepipe: DatePipe,
     private location: Location,
     public modalCtrl: ModalController,
     public navCtrl: NavController) {
@@ -25,12 +27,43 @@ export class ModalComponent implements OnInit {
   ngOnInit() {}
 
   confirmMonitoria() {
+    if (!this.checkMonitoria()) {
+      this.presentAlert();
+      return;
+    }
+    this.monitoria.data = this.datepipe.transform(this.monitoria.data, 'dd/MM/yyyy');
+    this.monitoria.horario = this.datepipe.transform(this.monitoria.horario, 'HH:mm');
     this.modalCtrl.dismiss(this.monitoria);
   }
 
   cancel () {
-    this.modalCtrl.dismiss({
-      'dismissed': true
-    });
+    this.modalCtrl.dismiss();
   }
+
+  checkMonitoria() : boolean {
+    if (this.monitoria.disciplina.nome.length<3)
+      return false;
+
+    // =null
+    
+      return true;
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Campos inválidos!',
+      buttons: [
+        
+        {
+          text: 'OK',
+          role: 'confirm',
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
 }

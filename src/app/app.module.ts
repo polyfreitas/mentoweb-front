@@ -10,7 +10,7 @@ import { AuthService } from 'src/services/auth.service';
 import { DisciplinaService } from 'src/services/domain/Disciplina.service';
 import { StorageService } from 'src/services/storage.service';
 import { AlunoService } from 'src/services/domain/Aluno.service';
-import { registerLocaleData } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
 
@@ -38,6 +38,7 @@ registerLocaleData(localePt);
     StorageService,
     AlunoService,
     DisciplinaService,
+    DatePipe,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
   ]
 })

@@ -19,7 +19,7 @@
       </ion-card-header>
 
       <ion-card-content>
-        DATA E HORA: {{ monitoria.data + ' ' + monitoria.horario | date:'dd/MM/yyyy HH:mm' }}<br>
+        DATA E HORA: {{ monitoria.data + ' ' + monitoria.horario }}<br>
         LOCAL: {{monitoria.local}}<br>
 
         <div class="action-buttons">
@@ -32,7 +32,7 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-fab horizontal="end" vertical="down" slot="fixed">
+    <ion-fab horizontal="end" vertical="top" slot="fixed">
       <ion-fab-button id="open-modal" (click)="openEditMonitoria()">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>

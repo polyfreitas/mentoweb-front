@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { API_CONFIG } from "src/config/api.config";
 import { Credenciais } from "src/models/credenciais";
+import { LocalUser } from "src/models/local_user";
 
 import { StorageService } from "./storage.service";
 
@@ -19,7 +20,18 @@ export class AuthService {
 
     }
 
+    successfulLogin(authorizationValue: string) {
+        const token = authorizationValue.substring(7);
+        const user : LocalUser = {
+            token
+        };
+
+    this.storage.setLocalUser(user);
+        
+    }
+
     logout() {
         localStorage.clear()
     }
+
 }

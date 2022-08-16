@@ -100,7 +100,7 @@ export class Tab1Page implements OnInit {
 
     await modal.present();
     modal.onWillDismiss().then(res => {
-      if (!hasMonitoria) {
+      if (!hasMonitoria && res.data) {
         this.monitorias.push(res.data)
       }
     })
