@@ -43,7 +43,7 @@
                           </div>
                         </ion-item>
 
-                        <ion-button (click)="logar()" expand="block">Login</ion-button>
+                        <ion-button (click)="logar()" expand="block" [disabled]="!validaCampos">Login</ion-button>
                         <!-- <ion-button class="botao-registro" expand="block" (click)="showRegister">Criar sua conta
                 </ion-button> -->
                       </ion-card-content>

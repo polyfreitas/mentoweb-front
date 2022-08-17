@@ -50,9 +50,4 @@ export class LoginPage implements OnInit {
   validaCampos(): boolean {
     return (this.email.valid && this.senha.valid)
   }
-
-  showRegister() {
-    this.navCtrl.navigateForward('register');
-  }
-
 }

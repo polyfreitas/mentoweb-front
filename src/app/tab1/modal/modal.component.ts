@@ -41,17 +41,22 @@ export class ModalComponent implements OnInit {
   }
 
   checkMonitoria() : boolean {
-    if (this.monitoria.disciplina.nome.length<3)
+    if (this.monitoria.disciplina.nome.length<5)
       return false;
 
-    // =null
+    if (this.monitoria.monitor.nomeCompleto.length<7)
+    return false;
+
+    if (this.monitoria.local.length<3)
+    return false;
     
-      return true;
+    return true;
+
   }
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Campos inválidos!',
+      header: 'Preencha todos os campos corretamente!',
       buttons: [
         
         {
