@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import _ from 'lodash';
+
 @Component({
   selector: 'app-monitorias-list',
   templateUrl: './monitorias-list.page.html',
@@ -9,6 +11,8 @@ import { NavController } from '@ionic/angular';
 export class MonitoriasListPage {
 
   public monitoriasInfo;
+  allMonitorias: any;
+  queryText: string;
 
   constructor(public navCtrl: NavController) {
     this.monitoriasInfo = [
@@ -91,9 +95,22 @@ export class MonitoriasListPage {
       { nome: 'Comunicação Técnica', id: 77 },
       { nome: 'História 4', id: 78 },
       { nome: 'Computador, Ética e Sociedade', id: 79 },
-    ]
+    ];
 
-    
+    this.allMonitorias = this.monitoriasInfo
+
+  }
+
+  filterDisciplina(mon: any){
+    let val = mon.target.value;
+    if (val && val.trim() != ''){
+      this.monitoriasInfo = _.values(this.allMonitorias);
+      this.monitoriasInfo = this.monitoriasInfo.filter((monitoriasInfo) => {
+        return (monitoriasInfo.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+  } else {
+    this.monitoriasInfo = this.allMonitorias;
+  }
 
   }
 }

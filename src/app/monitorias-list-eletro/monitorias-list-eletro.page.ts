@@ -10,7 +10,7 @@ import _ from 'lodash';
 export class MonitoriasListEletroPage {
 
   disciplinas: Array<{nome: string, id: string}>;
-  allDisciplinas: any;
+  allMonitorias: any;
   public monitoriasEletro;
   queryText: string;
 
@@ -97,7 +97,22 @@ export class MonitoriasListEletroPage {
       { nome: 'Estátistica', id: 156 },
       { nome: 'Segurança do Trabalho', id: 157 },
       { nome: 'Meio Ambiente e Energias Renováveis', id: 158 },
-    ]
+    ]; 
+
+    this.allMonitorias = this.monitoriasEletro;
+
   }
 
+  filterDisciplina(mon: any){
+    let val = mon.target.value;
+    if (val && val.trim() != ''){
+      this.monitoriasEletro = _.values(this.allMonitorias);
+      this.monitoriasEletro = this.monitoriasEletro.filter((monitoriasEletro) => {
+        return (monitoriasEletro.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+  } else {
+    this.monitoriasEletro = this.allMonitorias;
+  }
+
+  }
 }
